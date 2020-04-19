@@ -24,7 +24,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ProjAng-front"
+    }
+  },
+  "defaultProject": "ProjAng-front",
+  "cli": {
+    "analytics": "c0d572f4-918f-4db2-89cb-bb85c2c07520"
+  }
 }
