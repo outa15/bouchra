@@ -1,0 +1,165 @@
+<!-- 
+<form  (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nom</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" name= "nom" [(ngModel)]="patient.nom" aria-describedby="emailHelp" placeholder="Votre nom " required  >
+     
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Prenom</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" name= "prenom" [(ngModel)]="patient.prenom" aria-describedby="emailHelp" placeholder="Votre nom ">
+       
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">tel</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" name= "tel" [(ngModel)]="patient.telephone" aria-describedby="emailHelp" placeholder="Votre nom ">
+       
+      </div>
+      
+      <label for="exampleSelect1"> Vous etes : </label>
+      <div class="form-check">
+        
+        <label class="form-check-label" >
+            <input type="radio" class="form-check-input" name="patient" id="optionsRadios2" value="PATIENT" [(ngModel)]="patient.role">
+            patient
+          </label>
+        </div>
+        <div class="form-check disabled">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="medecin" id="optionsRadios3" value="PATIENT" disabled [(ngModel)]="patient.role">
+            medecin
+          </label>
+        </div>
+  
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Date de naissance</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" name= "date_naissance" [(ngModel)]="patient.date_naissance" aria-describedby="emailHelp" placeholder="Votre nom ">
+       
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">lieu de naissance</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" name= "lieu_naissance" [(ngModel)]="patient.lieu_naissance" aria-describedby="emailHelp" placeholder="Votre nom ">
+       
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Nationalité</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" name= "nationalite" [(ngModel)]="patient.nationalite" aria-describedby="emailHelp" placeholder="Votre nom ">
+       
+      </div>
+      <label for="exampleSelect1"> Civilité: </label>
+      <div class="form-check">
+        
+        <label class="form-check-label" >
+            <input type="radio" class="form-check-input" name="femme" id="optionsRadios2" value="option2" [(ngModel)]="patient.civilite">
+            Femme
+          </label>
+        </div>
+        <div class="form-check disabled">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="Homme" id="optionsRadios3" value="option3" disabled [(ngModel)]="patient.civilite">
+            Homme
+          </label>
+        </div>
+        <label for="exampleSelect1">Situation familiale :</label>
+        <div class="form-check">
+          
+          <label class="form-check-label" >
+              <input type="radio" class="form-check-input" name="celibataire" id="optionsRadios2" value="option2" [(ngModel)]="patient.situation_familial">
+              Célibatairee
+            </label>
+          </div>
+          <div class="form-check disabled">
+          <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="marie" id="optionsRadios3" value="option3" disabled [(ngModel)]="patient.situation_familial">
+              Marié(e)
+            </label>
+          </div>
+          <div class="form-check disabled">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="veuf(ve)" id="optionsRadios3" value="option3" disabled [(ngModel)]="patient.situation_familial">
+                Veuf(ve)
+              </label>
+            </div>
+      <div class="form-group">
+        <label for="exampleSelect1">Ville</label>
+        <select class="form-control" id="exampleSelect1" name = "ville" [(ngModel)]="patient.ville" >
+        <option>choisissez votre Ville:</option>
+          <option>Oujda</option>
+          <option>Rabat</option>
+          <option>Casablanca</option>
+          <option>Fes</option>
+          <option>Meknes</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">accompagnateur</label>
+        <input type="email" class="form-control" name= "accompagnateur" [(ngModel)]="patient.accompagnateur" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Votre nom ">
+       
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Lien familiale</label>
+        <input type="email" class="form-control" name= "lien_familial" [(ngModel)]="patient.lien_familial" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Votre nom ">
+       
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Metier</label>
+        <input type="email" class="form-control" name= "profession" [(ngModel)]="patient.profession" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Votre nom ">
+       
+      </div>
+   
+    
+    <div class="form-group">
+      <label for="exampleTextarea">Adresse</label>
+      <textarea class="form-control" id="exampleTextarea" rows="3" name= "adresse" [(ngModel)]="patient.adresse" ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleSelect1">Groupe Sanguin</label>
+      <select class="form-control" id="exampleSelect1" name= "groupe_sanguin" [(ngModel)]="patient.groupe_sanguin">
+      <option>choisissez votre grp Sanguin:</option>
+        <option>A</option>
+        <option>A+</option>
+        <option>A-</option>
+        <option>B</option>
+        <option>B+</option>
+        <option>B-</option>
+        <option>O</option>
+        <option>O+</option>
+        <option>O-</option>
+        
+        
+      </select>
+    </div>
+   
+   
+    <button type="submit" class="btn btn-primary" name="submit">Valider</button> 
+
+    <button  type="reset" class="btn btn-danger" id=marge>Annuler</button> 
+</form>
+   -->
+
+   <div class="container"> 
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="form">
+  
+    <mat-form-field class="form-element">
+      <input matInput placeholder="Nom" formControlName="nom">
+    </mat-form-field>
+  
+    <mat-form-field class="form-element">
+      <input matInput placeholder="Role" formControlName="role">
+    </mat-form-field>
+  
+    <mat-form-field class="form-element">
+      <mat-radio-group aria-label="Civilité" formControlName="civilite">
+        <mat-radio-button value="FEMME" >Femme</mat-radio-button>
+        <mat-radio-button value="HOMME">Homme</mat-radio-button>
+      </mat-radio-group>
+    </mat-form-field>
+  
+    <div class="form-element">
+      <button mat-raised-button color="primary" type="submit" class="button" >Enregistrer</button>
+    </div>
+    
+    </form>
+  </div>

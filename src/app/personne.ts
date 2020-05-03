@@ -1,8 +1,11 @@
 export class Personne {
-    id_personne :number;
-    nom:String;
-    prenom :String;
-    tel: number;
-
-
+    id :number;
+    nom: string;
+    prenom : string;
+    telephone: number;
+    role : 'PATIENT' | 'MEDECIN' ;
+    
+    public constructor(init?: Partial<Personne>) {
+        Object.assign(this, init);
+    }
 }
