@@ -1,4 +1,5 @@
-<!-- 
+
+<!--
 <form  (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="exampleInputEmail1">Nom</label>
@@ -137,29 +138,178 @@
 
     <button  type="reset" class="btn btn-danger" id=marge>Annuler</button> 
 </form>
-   -->
+-->
+   
+  
+   <div class="personne-wrapper" fxLayout="column" fxLayoutAlign="left left">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Entrez vos Informations :</mat-card-title>
+      </mat-card-header>
 
-   <div class="container"> 
-    <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="form">
-  
-    <mat-form-field class="form-element">
-      <input matInput placeholder="Nom" formControlName="nom">
-    </mat-form-field>
-  
-    <mat-form-field class="form-element">
-      <input matInput placeholder="Role" formControlName="role">
-    </mat-form-field>
-  
-    <mat-form-field class="form-element">
-      <mat-radio-group aria-label="Civilité" formControlName="civilite">
-        <mat-radio-button value="FEMME" >Femme</mat-radio-button>
-        <mat-radio-button value="HOMME">Homme</mat-radio-button>
-      </mat-radio-group>
-    </mat-form-field>
-  
-    <div class="form-element">
-      <button mat-raised-button color="primary" type="submit" class="button" >Enregistrer</button>
-    </div>
+    <mat-card-content>
+        <form (ngSubmit)="onSubmit()">
+
+          <mat-grid-list cols="2" rowHeight='100px' [gutterSize]="'20px'">
+            <mat-grid-tile [colspan]="1" [rowspan]="1" >
+                      <mat-form-field class="personne-full-width">
+                        <mat-label>Entrez votre Nom</mat-label>
+                        <input matInput placeholder="Nom" name="nom" [(ngModel)]="patient.nom" >
+                      </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="1" >
+                      <mat-form-field class="personne-full-width">
+                        <mat-label>Entrez votre Prénom</mat-label>
+                        <input matInput placeholder="Prenom"  name="prenom" [(ngModel)]="patient.prenom">
+                      </mat-form-field>
+            </mat-grid-tile>
+          </mat-grid-list>
+
+          <mat-grid-list cols="2" rowHeight='100px' [gutterSize]="'20px'">
+              <mat-grid-tile [colspan]="1" [rowspan]="1" >
+                        <mat-form-field class="personne-full-width">
+                          <mat-label> entrez votre Telephone</mat-label>
+                          <input matInput placeholder="Telephone mobile"  name="tlf" [(ngModel)]="patient.telephone">
+                        </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="1" [rowspan]="1" >
+                <mat-form-field >
+                  <mat-label>Votre date de naissance :</mat-label>
+                  <input matInput [matDatepicker]="picker"  name="date_naiss" [(ngModel)]="patient.date_naissance">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              </mat-grid-tile>
+          </mat-grid-list>
+
+          <mat-grid-list cols="2" rowHeight='100px' [gutterSize]="'20px'">
+            <mat-grid-tile [colspan]="1" [rowspan]="1" class="personne-full-width" >
+              <div class="example-container" class="personne-full-width">
+                
+               
+                <mat-form-field class="personne-full-width">
+                  <mat-label>Entrez votre Profession </mat-label>
+                  <input matInput placeholder="profession"  name="profession" [(ngModel)]="patient.profession">
+                </mat-form-field>
+              </div>     
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="1" >
+              <mat-form-field appearance="fill" >
+                <mat-label>Votre groupe sanguin</mat-label>
+                <mat-select  name="grp_sng" [(ngModel)]="patient.groupe_sanguin">
+                  <mat-option value="A">A</mat-option>
+                  <mat-option value="A">A+</mat-option>
+                  <mat-option value="A">A-</mat-option>
+                  <mat-option value="A">B</mat-option>
+                  <mat-option value="A">B+</mat-option>
+                  <mat-option value="A">B-</mat-option>
+                  <mat-option value="A">O</mat-option>
+                  <mat-option value="A">O+</mat-option>
+                  <mat-option value="A">O-</mat-option>
+                  <mat-option value="A">AB-</mat-option>
+                    
+                  
+                </mat-select>
+              <mat-hint align="end">cliquez pour lister</mat-hint>
+              </mat-form-field> 
+            </mat-grid-tile>
+          </mat-grid-list>
+
+          <br>
+          <mat-grid-list cols="2" rowHeight='100px' [gutterSize]="'20px'">
+            <mat-grid-tile [colspan]="1" [rowspan]="1" class="personne-full-width" >
+              <div class="example-container" class="personne-full-width">
+                <mat-form-field appearance="fill" >
+                  <mat-label>Votre ville natale</mat-label>
+                  <mat-select name="villeNat" [(ngModel)]="patient.lieu_naissance">
+                    <mat-option value="Oujda">Oujda</mat-option>
+                    <mat-option value="Casablanca">Casablanca</mat-option>
+                    <mat-option value="Rabat">Rabat</mat-option>
+                    <mat-option value="Tanger">Tanger</mat-option>
+                     <mat-option value="Fes">Fes</mat-option>
+                      <mat-option value="Marrakech">Marrakech</mat-option>
+                  </mat-select>
+                <mat-hint align="end">cliquez pour lister</mat-hint>
+                </mat-form-field>
+                </div>
+                      
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="1" >
+              <mat-form-field class="personne-full-width">
+                <mat-label>Entrez votre Nationalité </mat-label>
+                <input matInput placeholder="Nationalité"  name="Nationalité" [(ngModel)]="patient.nationalite">
+              </mat-form-field>  
+            </mat-grid-tile>
+          </mat-grid-list>
+
+         
+           
+        <br>
+            <mat-radio-group  name="civilité" [(ngModel)]="patient.civilite" >
+              <mat-label>Civilité              : </mat-label>
+              <mat-radio-button value="FEMME"> Femme </mat-radio-button>
+              <mat-radio-button value="HOMME"> Homme </mat-radio-button>
+            </mat-radio-group>
+        <br>
+        <br>
+        <div class="example-container" class="personne-full-width">
+          <mat-form-field appearance="fill" >
+            <mat-label>Votre ville de résidence</mat-label>
+            <mat-select name="VilleR"[(ngModel)]="patient.ville">
+              <mat-option value="Oujda">Oujda</mat-option>
+              <mat-option value="Casablanca">Casablanca</mat-option>
+              <mat-option value="Rabat">Rabat</mat-option>
+              <mat-option value="Tanger">Tanger</mat-option>
+               <mat-option value="Fes">Fes</mat-option>
+                <mat-option value="Marrakech">Marrakech</mat-option>
+            </mat-select>
+          <mat-hint align="end">cliquez pour lister</mat-hint>
+          </mat-form-field>
+          </div>
+          <br>
+          <br>
+          <mat-radio-group name="sit_fam" [(ngModel)]="patient.situation_familial">
+            <mat-label>Situation familiale              : </mat-label>
+            <mat-radio-button value="FEMME"> Célibataire  </mat-radio-button>
+            <mat-radio-button value="HOMME"> Marié(e) </mat-radio-button>
+            <mat-radio-button value="HOMME"> Veuf(ve) </mat-radio-button>
+            <mat-radio-button value="HOMME"> Divorcé(e) </mat-radio-button>
+          </mat-radio-group>
+          <br>
+          <mat-grid-list cols="2" rowHeight='100px' [gutterSize]="'20px'">
+            <mat-grid-tile [colspan]="1" [rowspan]="1"  >
+                      <mat-form-field class="personne-full-width">
+                        <mat-label>Nom d'accompagnateur</mat-label>
+                        <input matInput placeholder="Nom d'accompagnateur" name="nom_accompagnateur" [(ngModel)]="patient.accompagnateur">
+                      </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="1" >
+                      <mat-form-field class="formX">
+                        <mat-label>Lien familial</mat-label>
+                        <input matInput placeholder="Lien familial" name="lien_familial" [(ngModel)]="patient.lien_familial" >
+                      </mat-form-field>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <mat-form-field class="example-full-width">
+            <mat-label>adresse</mat-label>
+            <textarea matInput placeholder="Ex. 26,Rue maqdis" name="adresse" [(ngModel)]="patient.adresse"></textarea>
+          </mat-form-field>
+          <br>
+
+          <mat-radio-group  name="role" [(ngModel)]="patient.role" >
+            <mat-label>Vous etes               : </mat-label>
+            <mat-radio-button value="PATIENT"> patient </mat-radio-button>
+            <mat-radio-button value="MEDECIN"> medecin </mat-radio-button>
+          </mat-radio-group>
+
+         
     
-    </form>
-  </div>
+    <div>
+      <button mat-raised-button color="primary" type="submit" class="button">Enregistrer</button>
+    </div>
+
+  
+  </form>
+  </mat-card-content>
+    </mat-card>
+</div> 

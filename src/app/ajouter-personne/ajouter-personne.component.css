@@ -1,3 +1,49 @@
 #marge {
     margin-left: 2em;
     }
+form  {
+  background-color:#DCDCDC;
+}
+
+.box{
+  background-color: #DCDCDC;
+}
+
+    .personne-form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+      }
+      
+      .personne-full-width {
+        width: 100%;
+      }
+      
+      .mat-radio-button ~ .mat-radio-button {
+        margin-left: 50px;
+      }
+      
+      .mat-grid-list  {
+        display: block !important; /* or whichever you need */
+      }
+      
+      
+      .example-container .mat-form-field + .mat-form-field {
+        margin-left: 8px;
+        margin-bottom: 15px;
+      }
+      
+      mat-form-field {
+        width: 70%;
+       }
+      
+      .formX{
+        width: 70%;
+      }
+
+
+
+      
+
+
+    
