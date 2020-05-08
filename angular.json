@@ -89,8 +89,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -126,5 +125,10 @@
   "defaultProject": "ProjAng-front",
   "cli": {
     "analytics": "c0d572f4-918f-4db2-89cb-bb85c2c07520"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
   }
 }
