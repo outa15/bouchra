@@ -1,0 +1,162 @@
+
+<div class="card mb-3">
+    <img src="assets/img/image.jpg" class="card-img-top" id="xoxo">
+    <div class="card-body">
+      <h5 class="card-title">Bonjour,voila le dossier medical de Mr {{patient.nom}}</h5>
+
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item active" aria-current="page">Nom et Prenom :  {{patient.nom}} {{patient.prenom}}</li>
+                </ol>
+              </nav>
+          </div>
+          <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item active" aria-current="page">Télephone mobile :  {{patient.telephone}} </li>
+                </ol>
+              </nav>
+          </div>
+        </div>
+      
+        
+            <div class="row">
+              <div class="col">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item active" aria-current="page">Date de Naissance : {{patient.date_naissance}}</li>
+                    </ol>
+                  </nav>
+              </div>
+              <div class="col">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item active" aria-current="page"> Lieu de Naissance : {{patient.lieu_naissance}}</li>
+                    </ol>
+                  </nav>
+              </div> </div>
+            
+     
+
+           
+                <div class="row">
+                  <div class="col">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item active" aria-current="page"> Nationalité: {{patient.nationalite}}</li>
+                        </ol>
+                      </nav>
+                  </div>
+                  <div class="col">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item active" aria-current="page">Civilité : {{patient.civilite}}</li>
+                        </ol>
+                      </nav>
+                  </div> </div>
+               
+                  <div class="row">
+                    <div class="col">
+                      <nav aria-label="breadcrumb">
+                          <ol class="breadcrumb">
+                            <li class="breadcrumb-item active" aria-current="page">  Situation Familiale : {{patient.situation_familial}}</li>
+                          </ol>
+                        </nav>
+                    </div>
+                    <div class="col">
+                      <nav aria-label="breadcrumb">
+                          <ol class="breadcrumb">
+                            <li class="breadcrumb-item active" aria-current="page">Ville de Résidence :{{patient.ville}}</li>
+                          </ol>
+                        </nav>
+                    </div> </div>
+    
+                    <div class="row">
+                        <div class="col">
+                          <nav aria-label="breadcrumb">
+                              <ol class="breadcrumb">
+                                <li class="breadcrumb-item active" aria-current="page">  Accompagnateur :{{patient.accompagnateur}}</li>
+                              </ol>
+                            </nav>
+                        </div>
+                        <div class="col">
+                          <nav aria-label="breadcrumb">
+                              <ol class="breadcrumb">
+                                <li class="breadcrumb-item active" aria-current="page">Lien Familial : {{patient.lien_familial}}</li>
+                              </ol>
+                            </nav>
+                        </div>
+                   
+                   </div>
+                   <div class="row">
+                    <div class="col">
+                      <nav aria-label="breadcrumb">
+                          <ol class="breadcrumb">
+                            <li class="breadcrumb-item active" aria-current="page"> Profession : {{patient.profession}}</li>
+                          </ol>
+                        </nav>
+                    </div>
+                    <div class="col">
+                      <nav aria-label="breadcrumb">
+                          <ol class="breadcrumb">
+                            <li class="breadcrumb-item active" aria-current="page">Groupe Sanguin : {{patient.groupe_sanguin}}</li>
+                          </ol>
+                        </nav>
+                    </div>
+               
+               </div>
+     
+   
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page"> Adresse : {{patient.adresse}}</li>
+        </ol>
+      </nav>
+    
+     
+
+      </div>
+  </div>
+  <h5 class="card-title">Consultations faites par Mr {{patient.nom}} </h5>
+  <div class="panel-body" id="tab">
+    <table class="table table-striped">
+       
+        <thead>
+            <tr>
+              <th>id</th>
+                <th>Date debut</th>
+                <th>Date Fin</th>
+                <th>Montant</th>
+                <th>Statut</th>
+                <th>Symptomes</th>
+                <th>Traitement</th>
+                <th>Actions</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let consultation of consultations">
+             
+              <td>{{consultation.id}}</td>
+                <td>{{consultation.dateDebut}}</td>
+                <td>{{consultation.dateFin}}</td>
+                <td>{{consultation.montant}}</td>
+                <td>{{consultation.statut}}</td>
+                <td>{{consultation.symptomes}}</td>
+                <td>{{consultation.traitement}}</td>
+                <td>
+                    <button (click)="deleteConsultation(consultation.id)" type="button" class="btn btn-warning">Supprimer</button>
+                    <button class="btn btn-info" 
+                        style="margin-left: 10px">Modifier</button> 
+                    
+                        
+                </td>
+            </tr>
+        </tbody>
+        
+    </table>
+</div>
+</div>

@@ -1,9 +1,12 @@
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h2> Liste de personnes </h2>
-    </div>
+<div class="panel panel-primary" >
+    <div class="panel-heading" id="image">
+      
+        </div> 
+   <br> <br> <br>
+    
     <div class="panel-body">
         <table class="table table-striped">
+           
             <thead>
                 <tr>
                     
@@ -21,9 +24,12 @@
                     <td>{{prs.nom}}</td>
                     <td>{{prs.prenom}}</td>
                     <th>{{prs.telephone}}</th>
-                    <td><button (click)="deletePerso(prs.id)" class="btn btn-danger">Delete</button>
+                    <td><button (click)="deletePerso(prs.id)" class="btn btn-danger">Supprimer</button>
                         <button class="btn btn-info" (click)="afficherPersonneDetails(prs.id)"
-                            style="margin-left: 10px">Details</button>
+                            style="margin-left: 10px">Details</button> 
+                        
+                            <button (click)="consulterDossierMedical(prs.id)" type="button" class="btn btn-secondary" id ="xoxo">Consulter le dossier Medical</button>
+                            
                     </td>
                     
                 </tr>

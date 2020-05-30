@@ -41,6 +41,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatNativeDateModule} from '@angular/material/core';
 import { SuiModule} from 'ng2-semantic-ui';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { DossierMedicalComponent } from './dossier-medical/dossier-medical.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     PersonneComponentComponent,
     PersonneDetailsComponent,
     AjouterPersonneComponent,
-    AppComponent
+    AppComponent,
+    DossierMedicalComponent
      
   ],
   imports: [

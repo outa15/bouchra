@@ -15,5 +15,15 @@ export class PatientService {
       return this.httpClient.post(`${this.baseUrll}`,patient);
   }
 
-
+  getPatientById(id_patient:any) :Observable<any>{
+    return this.httpClient.get(`${this.baseUrll}/${id_patient}`);
+  }
+  DeletePatient (id_patient) :Observable<any>{
+    return this.httpClient.delete (`${this.baseUrll}/${id_patient}`);
+  }
+  getAllPatients (): Observable<any>{
+    return this.httpClient.get(`${this.baseUrll}`);
+  }
+ 
+ 
 }

@@ -1,4 +1,5 @@
 import { Personne } from './personne'
+import { Consultation } from './consultation'
 
 export class Patient extends Personne {
     date_naissance : String 
@@ -12,6 +13,8 @@ export class Patient extends Personne {
     profession :String
     adresse :String
     groupe_sanguin :String
+    
+     consultations: Array<Consultation>;
 
     public constructor(init?: Partial<Patient>) {
         super(init);

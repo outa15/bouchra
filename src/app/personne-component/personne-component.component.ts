@@ -11,7 +11,8 @@ import { Personne } from "../personne";
   styleUrls: ['./personne-component.component.css']
 })
 export class PersonneComponentComponent implements OnInit {
-
+  
+  
 
   personnes : Observable<Personne []>
   constructor(private personneService: PersonneService,
@@ -38,5 +39,9 @@ export class PersonneComponentComponent implements OnInit {
   afficherPersonneDetails(id: number) {
     this.router.navigate(['details', id]);
   }
-
+  consulterDossierMedical (idPatient :String){
+    
+    this.router.navigate(['dossierMedical', idPatient]);
+  }
+  
 }

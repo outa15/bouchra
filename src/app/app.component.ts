@@ -12,6 +12,7 @@ import { TooltipConfig } from 'ngx-bootstrap/tooltip';
 export class AppComponent {
   title = 'ProjAng-front';
   public collapsed = false;
+  
 
 } 
 //ljadid
@@ -23,3 +24,4 @@ export function getAlertConfig(): TooltipConfig {
     container: 'body'
   });
 }
+

@@ -1,10 +1,12 @@
-<div id="wrapper">
-	<nav id="sidebar" [class.collapsed]="collapsed" >
+
+	<div id="wrapper" >
+	<nav id="sidebar" [class.collapsed]="collapsed" class="xoxo" >
 		
 		<span class="divider"></span>
 		<div class="userArea">
 			<div class="userPicture">
-				<img src="//dev-sourcing.s3.amazonaws.com/assets/picture@2x.jpg" alt="profile picture" />
+				
+				<img src="assets/img/image.jpg " alt="profile picture" />
 			</div>
 			<div class="userName">
 				Hannah Smith
@@ -20,13 +22,13 @@
 		<span class="divider"></span>
 		<ul class="navigation">
 			<li>
-				<a href="#" tooltip="Dashboard"><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z"  fill-rule="nonzero"/></svg></i><span>Dashboard</span></a>
+				<a  routerLink="personne"  routerLinkActive="active" tooltip="Dashboard"><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z"  fill-rule="nonzero"/></svg></i><span>Liste de patients</span></a>
 			</li>
       <li>
-				<a href="#" tooltip="Rules" class="active"><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z"  fill-rule="nonzero"/></svg></i><span>Rules</span></a>
+				<a routerLink="Ajouter"  routerLinkActive="active" ><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z"  fill-rule="nonzero"/></svg></i><span>Inscriptions</span></a>
 			</li>
       <li>
-				<a href="#" tooltip="Taxonomy"><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z"  fill-rule="nonzero"/></svg></i><span>Taxonomy</span></a>
+				<a routerLink="dossierMedical"  routerLinkActive="active"><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z"  fill-rule="nonzero"/></svg></i><span>Dossiers Medicaux</span></a>
 			</li>
       <li>
 				<a href="#" tooltip="Reporting"><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z" fill-rule="nonzero"/></svg></i><span>Reporting</span></a>
@@ -52,13 +54,17 @@
 				(click)="collapsed = !collapsed"></i></span>
 	</div>
 	</nav>
+
+
+
+
 	<div id="content">
 		<div class="container-fluid">
 			<div class="row">
 			<div class="container">
-				<br>
+			<!--	<br>
 				<h2 style="text-align: center;">{{title}}</h2>
-				<hr>
+				<hr> -->
 				<div class="card">
 					<div class="card-body">
 						<router-outlet></router-outlet>
@@ -70,6 +76,7 @@
 
 	</div>
 </div>
+
 <!---------------------------------------------------------------------->
 
 <!-- <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
