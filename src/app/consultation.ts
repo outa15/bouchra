@@ -11,9 +11,9 @@ export class Consultation {
      statut :string;
      symptomes :string;
      traitement :string ;
-    
-      listPatients: Array<Patient> ;
-      listMedecins: Array<Medecin> ;
+     medecin :Medecin
+     patient :Patient
+      
 
 
 

@@ -1,0 +1,157 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+ <div>
+<div class="container spacer" id="bif">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Listes des consultations</div>
+    <div class="panel-body">
+      <div class="form-group">
+        <form (ngSubmit)="onSubmit()">
+            <label> filtrer par nom : </label> 
+            <input type="text" id ="myInput" name="nom" [(ngModel)]="nomPatient"/> 
+            <button class="btn-primary" id="myInput2" >Search </button> <div *ngIf="elseBlock" class="alert alert-danger" role="alert" id="myAlert">
+                Consultation supprimée!
+              </div> 
+            
+             
+        </form>
+      </div> 
+      <div *ngIf="DisplayName;else elseBlock" >
+    
+      
+     
+        <div class="container spacer" id="bif">
+          <div class="panel panel-primary">
+            <div class="panel-heading">Consultations du patient : {{nomPatient}}</div>
+            <div class="panel-body">
+              <div class="form-group">
+             
+                <table class ="table table-striped">
+  
+  <tr>
+    
+               
+               <th >date Debut</th>
+                <th >date Fin </th>
+                <th >details</th>
+                <th >montant</th>
+                <th >Patient concerné</th>
+                
+  </tr>
+  <tbody>
+
+    <tr *ngFor="let consult of consultationss  ">
+      
+        <td >{{consult.dateDebut}}</td>
+        <td >{{consult.dateFin}}</td>
+        <td >{{consult.statut}}</td>
+        <td >{{consult.montant}}</td>
+        <td >{{consult.patient.nom}}</td>
+       
+       
+    </tr>
+    
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+  <table class ="table table-striped">
+  <tr>
+    
+                <th >id</th>
+                <th >date Debut</th>
+                <th >date Fin </th>
+                <th >Statut</th>
+                <th >montant</th>
+                <th >Patient concerné</th>
+                <th>Gestion</th>
+  </tr>
+  <tbody>
+    <tr *ngFor="let consult of consultations  ">
+        <td >{{consult.id}}</td>
+        <td >{{consult.dateDebut}}</td>
+        <td >{{consult.dateFin}}</td>
+        <td >{{consult.statut}}</td>
+        <td >{{consult.montant}}</td>
+        <td >{{consult.patient.nom}}</td>
+        <!--<td><button class="btn"><i class="fa fa-trash"></i></button></td> -->
+        <td>
+          <button (click)="deleteConsultaation(consult.id)"><img  src="assets/img/delete.png" id="img1"></button>
+          
+                           
+     
+          <button (click)="updateConsultation(consult.id)"><img  src="assets/img/edit.png" id="img2"> </button>
+          
+                           
+     
+          <button><img src="assets/img/lister.png"id="img3"></button>
+         
+                           
+      </td> 
+       
+    </tr>
+    
+</tbody>
+ </table>
+</div>
+</div>
+</div>
+</div>
+<!--
+  
+
+   <div *ngIf="DisplayName;else elseBlock" >
+    
+      
+     
+        <div class="container spacer" id="bif">
+          <div class="panel panel-primary">
+            <div class="panel-heading">Consultations du patient : {{nomPatient}}</div>
+            <div class="panel-body">
+              <div class="form-group">
+             
+                <table class ="table table-striped">
+  
+  <tr>
+    
+               
+               <th >date Debut</th>
+                <th >date Fin </th>
+                <th >details</th>
+                <th >montant</th>
+                <th >Patient concerné</th>
+                
+  </tr>
+  <tbody>
+
+    <tr *ngFor="let consult of consultationss  ">
+      
+        <td >{{consult.dateDebut}}</td>
+        <td >{{consult.dateFin}}</td>
+        <td >{{consult.statut}}</td>
+        <td >{{consult.montant}}</td>
+        <td >{{consult.patient.nom}}</td>
+       
+       
+    </tr>
+    
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+-->
+
+     <!------------------------------------------------------------>
+  <!--   <div *ngIf="elseBlock" >
+      <div class="alert alert-danger" role="alert">
+        This is a danger alert—check it out!
+      </div> </div>
+ -->

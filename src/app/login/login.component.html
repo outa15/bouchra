@@ -1,0 +1,122 @@
+
+
+<form fxFlex fxLayout="column" fxLayoutAlign="center center" [formGroup]="loginForm" (ngSubmit)="onLogin()" fxLayoutGap="20px" >
+
+
+	<mat-form-field> 
+
+		<mat-label>Enter Username</mat-label>
+
+		<input matInput placeholder="Username" required formControlName="username">
+
+		<mat-hint align="end">Your username</mat-hint>
+
+		<mat-error *ngIf="username.invalid">
+			Username is required
+		</mat-error>
+
+ 	</mat-form-field>
+
+
+	<mat-form-field>
+
+		<mat-label>Enter Password</mat-label>
+
+		<input id="password" matInput placeholder="Password" type="Password" name="password" required formControlName="password">
+			
+		<mat-hint align="end">Your password</mat-hint>
+
+		<mat-error *ngIf="password.invalid">
+			Password is required
+		</mat-error>
+
+	</mat-form-field>
+
+  
+	<div >
+	 	 
+		<button mat-raised-button
+		matTooltip="Info about the action"
+		type="submit" [disabled]="password.invalid || username.invalid"
+		>Login</button>
+	</div>
+</form>
+
+<!--
+<mat-card>
+  <mat-card-content>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <h2>Log In</h2>
+      <mat-error *ngIf="email.invalid">
+        The username and password were not recognised
+      </mat-error>
+      <mat-form-field class="full-width-input">
+        <input matInput placeholder="Email" formControlName="email"  required>
+        <mat-error>
+          Please provide a valid email address
+        </mat-error>
+      </mat-form-field>
+      <br> 
+      <mat-form-field class="full-width-input">
+        <input matInput type="password" placeholder="Password" formControlName="password" required>
+        <mat-error *ngIf="password.invalid">
+          Please provide a valid password
+        </mat-error>
+      </mat-form-field>
+      <br> <br> <br>
+      <button mat-raised-button color="primary">Login</button>
+    </form>
+  </mat-card-content>
+</mat-card> -->
+<!--
+ model: any = {};
+ 
+    constructor(
+        private route: ActivatedRoute,
+        private router: Router,
+        private http: Http
+    ) { }
+ 
+    ngOnInit() {
+        sessionStorage.setItem('token', '');
+    }
+ 
+    login() {
+        let url = 'http://localhost:8082/login';
+        let result = this.http.post(url, {
+            userName: this.model.username,
+            password: this.model.password
+        }).map(res => res.json()).subscribe(isValid => {
+            if (isValid) {
+                sessionStorage.setItem(
+                  'token',
+                  btoa(this.model.username + ':' + this.model.password)
+                );
+                this.router.navigate(['']);
+            } else {
+                alert("Authentication failed.");
+            }
+        });
+    } -->
+    <!------- final 
+    <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+      <div [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+          <label for="username">Username</label>
+          <input type="text"
+            name="username" [(ngModel)]="model.username"
+              #username="ngModel" required />
+          <div *ngIf="f.submitted
+            && !username.valid">Username is required</div>
+      </div>
+      <div [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+          <label for="password">Password</label>
+          <input type="password"
+            name="password" [(ngModel)]="model.password"
+              #password="ngModel" required />
+          <div *ngIf="f.submitted
+            && !password.valid">Password is required</div>
+      </div>
+      <div>
+          <button >Login</button>
+      </div>
+  </form> 

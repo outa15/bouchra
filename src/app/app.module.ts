@@ -42,16 +42,24 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { SuiModule} from 'ng2-semantic-ui';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { DossierMedicalComponent } from './dossier-medical/dossier-medical.component';
+import { ConsultationsComponent } from './consultations/consultations.component';
+import { UpdateConsultationComponent } from './update-consultation/update-consultation.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    
     PersonneComponentComponent,
     PersonneDetailsComponent,
     AjouterPersonneComponent,
     AppComponent,
-    DossierMedicalComponent
+    DossierMedicalComponent,
+    ConsultationsComponent,
+    UpdateConsultationComponent,
+    LoginComponent
+    
      
   ],
   imports: [
@@ -93,6 +101,7 @@ import { DossierMedicalComponent } from './dossier-medical/dossier-medical.compo
     MatPaginatorModule,
     ReactiveFormsModule,
     MatNativeDateModule,
+    
     SuiModule,
     TooltipModule.forRoot()
      
