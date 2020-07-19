@@ -19,9 +19,11 @@ export class ConsultationsComponent implements OnInit {
  formGroup: FormGroup
  DisplayName: boolean =false
  elseBlock : boolean=false
+ valide :boolean =false;
   constructor(private router: Router ,private dossierMedicalService:DossierMedicalService) { }
 
   ngOnInit() {
+    this.valide=true;
     this.reloadData();
   }
   consultation: Consultation
@@ -103,7 +105,10 @@ export class ConsultationsComponent implements OnInit {
       this.router.navigate(['Update', idConsultation]);
     }
 
-    }   
     
-  
-     
+    
+    afficherConsultationDetails(idConsultation :any){
+      this.router.navigate(['detailCons', idConsultation]);
+    }
+    
+  }

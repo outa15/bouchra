@@ -1,0 +1,60 @@
+
+  
+<!-------------->
+<div id="xoxo">
+  <div class="card" >
+      <img src="assets/img/rdv.png" class="card-img-top" alt="...">
+      <div class="card-body">
+         
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group" id="dispo">
+    <label for="exampleInputEmail1">Date demandée :</label>
+    <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="aide email" placeholder="Entrez votre date" name="response" [(ngModel)]="reservationNew.date">
+  
+    <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre cordonnés avec quelqu'un d'autre.</small>
+    <!--------------->
+    
+
+    <div class="form-group">
+      <label for="sel1">choisissez votre medecin :</label>
+      <select class="form-control" id="sel1" name="id_medecin" [(ngModel)]="id_medecin"  >
+       <!---- <option>Selectionnez votre medecin</option> ---->
+        <option *ngFor="let prs of medecins" value={{prs.id}}>{{prs.id}} - {{prs.nom}} {{prs.specialite}} </option>
+       
+      </select>
+    </div>
+    <!-------->
+   
+    <!------> 
+    <button type="submit" class="btn btn-primary">Verifier le disponibilité</button>
+</div>
+</form>
+
+  
+<div *ngIf="estDispo" id="dispo">
+    <p>{{medecin.nom}} ,est disponible ,vous pouvez remplir votre formulaire de prise de rendez-vous :</p>
+    <!---
+    <div class="form-group"> 
+      <label for="exampleInputEmail1">Votre identifiant</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="aide email" placeholder="Entrer votre adresse email" [(ngModel)]="id_patient" name = "id_patient">
+      <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre courrier électronique avec quelqu'un d'autre.</small>
+    </div>
+    -->
+    <div class="form-group">
+      <label for="exampleInputEmail1">Heure</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="aide email" placeholder="Entrer votre adresse email" name="heure">
+      <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre courrier électronique avec quelqu'un d'autre.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">disponibilite</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="aide email" placeholder="Entrer votre adresse email"  name="disponibilite">
+     
+      <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre courrier électronique avec quelqu'un d'autre.</small>
+      <button type="button" class="btn btn-danger" id= "valider" > Valider </button>
+    </div>
+  </div>
+
+      
+          <a href="/personne" class="btn btn-primary">Fermer</a>
+      </div>
+    </div> </div>

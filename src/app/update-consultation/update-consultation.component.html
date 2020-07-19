@@ -7,50 +7,50 @@
          <div class="form-row">
             <div class="form-group col-sm-2">
                <label for="myZip">N° consultation :</label>
-               <input type="text" class="form-control"  name="id" value ="{{consultation.id}}" [(ngModel)]="consult.id">
+               <input type="text" class="form-control" readonly name="id" [(ngModel)]="consultation.id">
             </div>
              <div class="form-group col-sm-4">
                 <label for="myState">Statut :</label>
-                <select id="myState" class="form-control" name="statut" [(ngModel)]="consult.statut">
-                   <option selected >DISPONIBLE</option>
-                   <option>ANNULE</option>
+                <select id="myState" class="form-control" name="statut" [(ngModel)]="consultation.statut">
+                   <option selected value="DISPONIBLE">DISPONIBLE</option>
+                   <option value="ANNULE">ANNULE</option>
                 </select>
              </div>
-           
+
             <div class="form-group col-sm-6">
                <label for="myCity">Montant :</label>
-               <input type="text" class="form-control"  name="montant" value ="{{consultation.montant}}" [(ngModel)]="consult.montant">
+               <input type="text" class="form-control"  name="montant" value ="{{consultation.montant}}" [(ngModel)]="consultation.montant">
             </div>
             </div>
           <div class="form-row">
              <div class="form-group col-sm-6">
                 <label for="myEmail">Date début :</label>
                 <input type="email" class="form-control"
-                   id="myEmail" value ="{{consultation.dateDebut}}" name="dateDebut" [(ngModel)]="consult.dateDebut">
+                   id="myEmail" value ="{{consultation.dateDebut}}" name="dateDebut" [(ngModel)]="consultation.dateDebut">
              </div>
              <div class="form-group col-sm-6">
                 <label for="myPassword">Date fin :</label>
                 <input type="text" class="form-control"
-                   id="myPassword" value ="{{consultation.dateFin}}" name="dateFin" [(ngModel)]="consult.dateFin">
+                   id="myPassword" value ="{{consultation.dateFin}}" name="dateFin" [(ngModel)]="consultation.dateFin">
              </div>
           </div>
-         
+
           <div class="form-group">
              <label for="inputAddress">Détails :</label>
              <textarea type="text" class="form-control"
-                id="myAddress" value ="{{consultation.details}}" name="details" [(ngModel)]="consult.details"> </textarea>
+                id="myAddress" value ="{{consultation.details}}" name="details" [(ngModel)]="consultation.details"> </textarea>
           </div>
           <div class="form-group">
             <label for="inputAddress">Symptomes :</label>
             <textarea type="text" class="form-control"
-               id="myAddress" value ="{{consultation.symptomes}}" name="symptomes" [(ngModel)]="consult.symptomes"> </textarea>
+               id="myAddress" value ="{{consultation.symptomes}}" name="symptomes" [(ngModel)]="consultation.symptomes"> </textarea>
          </div>
          <div class="form-group">
             <label for="inputAddress">Traitement : </label>
             <textarea type="text" class="form-control"
-               id="myAddress" value ="{{consultation.traitement}}" name="traitement" [(ngModel)]="consult.traitement"> </textarea>
+               id="myAddress" value ="{{consultation.traitement}}" name="traitement" [(ngModel)]="consultation.traitement"> </textarea>
          </div>
-         
+
           <div class="form-group">
              <div class="form-check">
                 <input class="form-check-input" type="checkbox">
@@ -59,8 +59,8 @@
                 </label>
              </div>
           </div>
-          <button type="submit" class="btn btn-primary">Sign in</button>
+          <button type="submit" class="btn btn-primary">Modifier</button>
        </form>
     </div>
-   
+
 

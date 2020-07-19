@@ -11,14 +11,14 @@ import { Personne } from "../personne";
   styleUrls: ['./personne-component.component.css']
 })
 export class PersonneComponentComponent implements OnInit {
-  
-  
+
+
 
   personnes : Observable<Personne []>
   constructor(private personneService: PersonneService,
     private router: Router) { }
 
-  
+
   ngOnInit() {
     this.reloadData();
   }
@@ -32,7 +32,7 @@ export class PersonneComponentComponent implements OnInit {
         data => {
           console.log(data);
           this.reloadData();
-          
+
         },
         error => console.log(error));
   }
@@ -41,8 +41,12 @@ export class PersonneComponentComponent implements OnInit {
     this.router.navigate(['details', id]);
   }
   consulterDossierMedical (idPatient :String){
-    
+
     this.router.navigate(['dossierMedical', idPatient]);
   }
-  
+  ajouterConsultation (id :String){
+
+    this.router.navigate(['AjouterCons', id]);
+  }
+
 }

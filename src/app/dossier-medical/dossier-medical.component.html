@@ -120,7 +120,7 @@
 
       </div>
   </div>
-  <h5 class="card-title">Consultations faites par Mr {{patient.nom}} </h5>
+  <h5 class="card-title">Consultations faites par {{patient.nom}} </h5> 
   <div class="panel-body" id="tab">
     <table class="table table-striped">
        
@@ -133,6 +133,7 @@
                 <th>Statut</th>
                 <th>Symptomes</th>
                 <th>Traitement</th>
+                
                 <th>Actions</th>
                 
             </tr>
@@ -147,6 +148,7 @@
                 <td>{{consultation.statut}}</td>
                 <td>{{consultation.symptomes}}</td>
                 <td>{{consultation.traitement}}</td>
+                
                 <td>
                     <button (click)="deleteConsultation(consultation.id)" type="button" class="btn btn-warning">Supprimer</button>
                     <button class="btn btn-info" 

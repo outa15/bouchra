@@ -5,6 +5,7 @@ export class Compte {
     password :String
      role : 'PATIENT' | 'MEDECIN' 
     message :String 
+    reponse :String
     personne : Personne 
 
 }

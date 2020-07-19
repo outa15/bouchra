@@ -1,0 +1,22 @@
+<form>
+  <div class="p-3 mb-2 bg-danger text-white">
+  Bonjour  {{nom}} , Si vous voulez consulter ou envoyer vos messages privés, cliquer ici pour acceder à votre <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" >boite de messagerie GMAIL</a>
+</div>
+<ul> <li *ngFor="let compte of comptes | async">
+  <div class="card" >
+  <div class="card-header">
+   {{compte.email}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">  {{compte.message}}</h5>
+    <p>=> {{compte.reponse}}</p>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1" aria-placeholder="ecrivez votre réponse docteur ..">Votre réponse ici</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <a href="#" class="btn btn-primary"> Envoyer</a>
+  </div>
+  <br>
+</div> </li>
+</ul> 
+    </form>

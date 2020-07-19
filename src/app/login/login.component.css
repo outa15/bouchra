@@ -2,8 +2,17 @@ mat-card {
     max-width: 400px;
     margin: 2em auto;
     text-align: center;
+    margin-bottom: 20%;
   }
   
   mat-form-field {
     display: block;
+  }
+
+  form{
+    margin-bottom: 40%;
+  }
+
+  #bouton{
+    width:20%
   }

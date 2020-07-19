@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 
- <div>
+ <div >
 <div class="container spacer" id="bif">
   <div class="panel panel-primary">
     <div class="panel-heading">Listes des consultations</div>
@@ -69,6 +69,7 @@
                 <th >Statut</th>
                 <th >montant</th>
                 <th >Patient concerné</th>
+                
                 <th>Gestion</th>
   </tr>
   <tbody>
@@ -79,6 +80,7 @@
         <td >{{consult.statut}}</td>
         <td >{{consult.montant}}</td>
         <td >{{consult.patient.nom}}</td>
+       
         <!--<td><button class="btn"><i class="fa fa-trash"></i></button></td> -->
         <td>
           <button (click)="deleteConsultaation(consult.id)"><img  src="assets/img/delete.png" id="img1"></button>
@@ -89,7 +91,7 @@
           
                            
      
-          <button><img src="assets/img/lister.png"id="img3"></button>
+          <button (click)="afficherConsultationDetails(consult.id)"><img src="assets/img/lister.png"id="img3"></button>
          
                            
       </td> 

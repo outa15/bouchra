@@ -45,6 +45,10 @@ import { DossierMedicalComponent } from './dossier-medical/dossier-medical.compo
 import { ConsultationsComponent } from './consultations/consultations.component';
 import { UpdateConsultationComponent } from './update-consultation/update-consultation.component';
 import { LoginComponent } from './login/login.component';
+import { DetailsConsultationComponent } from './details-consultation/details-consultation.component';
+import { AjouterConsultationComponent } from './ajouter-consultation/ajouter-consultation.component';
+import { MessagerieComponent } from './messagerie/messagerie.component';
+import { RendezVousComponent } from './rendez-vous/rendez-vous.component';
 
 
 @NgModule({
@@ -58,7 +62,11 @@ import { LoginComponent } from './login/login.component';
     DossierMedicalComponent,
     ConsultationsComponent,
     UpdateConsultationComponent,
-    LoginComponent
+    LoginComponent,
+    DetailsConsultationComponent,
+    AjouterConsultationComponent,
+    MessagerieComponent,
+    RendezVousComponent
     
      
   ],

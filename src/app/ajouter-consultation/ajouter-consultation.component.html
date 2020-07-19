@@ -1,0 +1,78 @@
+
+
+    
+    <br>
+    <div class="container" id="form1">
+        <h1 id="text"> Entrez les informations correspondantes à votre consultation :</h1>
+        <br> <br>
+        <form  (ngSubmit)="onSubmit()">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend"><span class="input-group-text" id="inputGroup" >Date début</span></div>
+                <input type="text" class="form-control" aria-label="Groupe d'input de taille normale" aria-describedby="inputGroup" name= dateDebut [(ngModel)]="consultation.dateDebut">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend"><span class="input-group-text" id="inputGroup"  >Date fin</span></div>
+                <input type="text" class="form-control" aria-label="Groupe d'input de taille normale" aria-describedby="inputGroup" name= dateFin [(ngModel)]="consultation.dateFin">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend"><span class="input-group-text" id="inputGroup">Montant</span></div>
+                <input type="text" class="form-control" aria-label="Groupe d'input de taille normale" aria-describedby="inputGroup" name= montant [(ngModel)]="consultation.montant" >
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend"><span class="input-group-text" id="inputGroup">Statut</span></div>
+                <input type="text" class="form-control" aria-label="Groupe d'input de taille normale" aria-describedby="inputGroup" name= statut [(ngModel)]="consultation.statut">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend"><span class="input-group-text" id="inputGroup">Symptomes</span></div>
+                <input type="text" class="form-control" aria-label="Groupe d'input de taille normale" aria-describedby="inputGroup" name= symptomes [(ngModel)]="consultation.symptomes">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend"><span class="input-group-text" id="inputGroup">Traitement</span></div>
+                <input type="text" class="form-control" aria-label="Groupe d'input de taille normale" aria-describedby="inputGroup" name= traitement [(ngModel)]="consultation.traitement">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend"><span class="input-group-text" id="inputGroup">Détails</span></div>
+                <input type="text" class="form-control" aria-label="Groupe d'input de taille normale" aria-describedby="inputGroup" name= details [(ngModel)]="consultation.details">
+            </div> 
+            
+            <div class="form-group">
+              
+                <select id="selection" class="form-control" name= medecinId [(ngModel)]="consultation.medecin.id"  >
+                  <option value="">Medecin concerné</option>
+                  <optgroup label="Groupe d'options 1">
+                   <!-- <option value="1">{{medecin}}</option> -->
+                    <option value="1">{{medecin.id}}</option>
+                    <option value="1">1</option>
+                   
+                  </optgroup>
+                  <!--
+                  <optgroup label="Groupe d'options 2">
+                    <option value="">Option 4</option>
+                    <option value="">Option 5</option>
+                  </optgroup> -->
+                </select>
+              </div>
+            <br><br>
+           
+
+
+            <button mat-raised-button color="primary">Enregistrer</button>
+            <table id="xoxo">
+                <thead>
+                    <tr> 
+                       
+                    </tr> 
+                 </thead>
+                  <tbody>
+                    <tr  *ngFor="let medecin of medecins  " >
+                    <!-- <td>medecin :{{medecin}}</td> -->
+                     </tr>
+                 </tbody> 
+            </table>
+            
+        </form>
+        
+    </div>
+

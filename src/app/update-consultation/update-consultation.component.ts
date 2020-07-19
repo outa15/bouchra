@@ -11,49 +11,50 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./update-consultation.component.css']
 })
 export class UpdateConsultationComponent implements OnInit {
-  
 
- 
-  constructor(private router :Router,private dossierMedicalService:DossierMedicalService ,private  route :ActivatedRoute,private formBuilder: FormBuilder) { }
- //pour formulaire
-  consult :Consultation=new Consultation ();
-  submitted =false;
+
+
+  // tslint:disable-next-line:max-line-length
+  constructor(private router: Router, private dossierMedicalService: DossierMedicalService , private  route: ActivatedRoute, private formBuilder: FormBuilder) { }
+ // pour formulaire
+  consult: Consultation = new Consultation ();
+  submitted = false;
   formGroup: FormGroup;
   //////////
 
- consultation :Consultation= new Consultation();
- nbr : any
+ consultation: Consultation = new Consultation();
+ nbr: any;
   ngOnInit(): void {
    // let id = this.route.snapshot.paramMap.get('idConsultation');
-    this.nbr=this.route.snapshot.params['id'];
-    console.log("my id is :"+this.nbr)
-   
+    this.nbr = this.route.snapshot.params.id;
+    console.log('my id is :' + this.nbr);
+
     this.dossierMedicalService.getConsultationsListById(this.nbr).subscribe(
-      data=>{ this.consultation=data
-      console.log(data)},
-      error=>console.log(error)
+      data => {
+        this.consultation = data;
+        console.log(data);
+        },
+      error => console.log(error)
     );
   }
-  //pour formulaire 
+  // pour formulaire
 
   onSubmit() {
     this.submitted = true;
-    console.log("id="+this.consult.id)
-    console.log("details="+this.consult.details)
+    console.log('consult' + this.consult);
     this.Update();
   }
-  Update () {
-    
 
-      this.dossierMedicalService.UpdateConsultation(this.nbr,this.consult).subscribe(
-        data=> console.log("my data:"+data),
-        error=> console.log(error)
-      )
-      console.log("Entréeeeee")
-      
+  Update() {
+      this.dossierMedicalService.UpdateConsultation(this.consultation).subscribe(
+        data => console.log('my data:' + data),
+        error => console.log(error)
+      );
+      console.log('Entréeeeee');
+
   }
 
   //////////
-  
+
 
 }

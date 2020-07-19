@@ -6,4 +6,7 @@
 
 .card-body {
     background-color:antiquewhite;
+    height: 100%;
+    width: 100%;
 }
+

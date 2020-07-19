@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Consultation } from './consultation';
 
@@ -8,35 +8,37 @@ import { Consultation } from './consultation';
 })
 export class DossierMedicalService {
 
-  
+
   constructor(private httpClient: HttpClient) { }
 
 private baseUrl = 'http://localhost:8080/api/v1/consultations';
-  getConsultationsList ():Observable<any>{
-    return this.httpClient.get(`${this.baseUrl}`)
-    
+  getConsultationsList(): Observable<any>{
+    return this.httpClient.get(`${this.baseUrl}`);
+
   }
 
-  getConsultationsListById(id_consultation :String):Observable<any>{
+  getConsultationsListById(id_consultation: String): Observable<any>{
     return this.httpClient.get(`${this.baseUrl}/${id_consultation}`);
   }
 
-  
-  deleteConsultation (id :any): Observable <any>{
+
+  deleteConsultation(id: any): Observable <any>{
     return this.httpClient.delete(`${this.baseUrl}/${id}`);
   }
-  saveConsultation( consultation :Consultation) :Observable <any>{
-    return  this.httpClient.post(`${this.baseUrl}`,consultation);
-  }
-  UpdateConsultation (id: any ,consultation :Consultation) :Observable <any>{
-    return  this.httpClient.put(`${this.baseUrl}/${id}`,consultation);
+
+  saveConsultation( consultation: Consultation): Observable <any>{
+    return  this.httpClient.post(`${this.baseUrl}`, consultation);
   }
 
 
-  
 
+  UpdateConsultation(consultation: Consultation): Observable <any>{
+    // const httpOptions = {
+    //   headers: new HttpHeaders({
+    //     'Content-Type':  'application/json'
+    //   })
+    // };
 
-
-
-  
+    return  this.httpClient.put(this.baseUrl , consultation);
+  }
 }

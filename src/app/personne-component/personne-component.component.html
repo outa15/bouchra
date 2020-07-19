@@ -46,7 +46,7 @@
  <div>
 <div class="container spacer" id="bif">
   <div class="panel panel-primary">
-    <div class="panel-heading">Listes des consultations</div>
+    <div class="panel-heading">Listes de patients</div>
     <div class="panel-body">
       <div class="form-group">
        <!--- <label> Key word : </label>
@@ -58,25 +58,26 @@
   <tr>
     <tr>
                     
-        <th>id</th>
-        <th>nom</th>
-        <th>prenom</th>
-        <th>tel</th>
+       
+        <th>nom du patient </th>
+        <th>prenom du patient </th>
+        
         <th>Actions</th>
         
     </tr>
   <tbody>
     <tr *ngFor="let prs of personnes | async">
-        <td>{{prs.id}}</td>
+        
         <td>{{prs.nom}}</td>
         <td>{{prs.prenom}}</td>
-        <th>{{prs.telephone}}</th>
+        
         <td><button (click)="deletePerso(prs.id)" class="btn btn-danger">Supprimer</button>
             <button class="btn btn-info" (click)="afficherPersonneDetails(prs.id)"
                 style="margin-left: 10px">Details</button> 
             
-                <button (click)="consulterDossierMedical(prs.id)" type="button" class="btn btn-secondary" id ="xoxo">Consulter le dossier Medical</button>
+                <button (click)="consulterDossierMedical(prs.id)" type="button" class="btn btn-secondary" id ="xoxo" >Consulter le dossier Medical</button>
                 
+                <button (click)="ajouterConsultation(prs.id)" type="button" class="btn btn-success" id ="xoxo" >Ajouter consultation</button>
         </td>
         
     </tr>

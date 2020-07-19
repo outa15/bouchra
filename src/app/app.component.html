@@ -1,15 +1,15 @@
 
 	<div id="wrapper" >
-	<nav id="sidebar" [class.collapsed]="collapsed" class="xoxo" >
+	<nav id="sidebar" [class.collapsed]="collapsed" class="xoxo" *ngIf="loggedIn | async"   > 
 		
 		<span class="divider"></span>
 		<div class="userArea">
 			<div class="userPicture">
 				
-				<img src="assets/img/image.jpg " alt="profile picture" />
+				<img src="assets/img/docteur.jpg " alt="profile picture" />
 			</div>
 			<div class="userName">
-				Hannah Smith
+				<p>{{nom}} </p>
 			</div>
       <div class="ui pointing dropdown accountMenu" suiDropdown autoClose="outsideClick">
 				<div class="text"><i class="fa fa-cogs"></i></div>
@@ -31,13 +31,13 @@
 				<a routerLink="dossierMedical"  routerLinkActive="active"><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z"  fill-rule="nonzero"/></svg></i><span>Dossiers Medicaux</span></a>
 			</li>
       <li>
-				<a href="consultations" tooltip="Reporting"><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z" fill-rule="nonzero"/></svg></i><span>Gestion de Consultations</span></a>
+				<a routerLink="consultations" tooltip="Reporting"><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z" fill-rule="nonzero"/></svg></i><span>Gestion de Consultations</span></a>
 			</li>
       <li>
-				<a href="#" tooltip="Products"><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z"  fill-rule="nonzero"/></svg></i><span>Products</span></a>
+				<a routerLink="messagerie" tooltip="Products"><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z"  fill-rule="nonzero"/></svg></i><span>Messagerie</span></a>
 			</li>
       <li>
-				<a href="#" tooltip="APIs"><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z" fill-rule="nonzero"/></svg></i><span>APIs</span></a>
+				<a href="#" (click)="onLogout()" tooltip="APIs"><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z" fill-rule="nonzero"/></svg></i><span>Deconnexion</span></a>
 			</li>
       <li>
         <div class="divider"></div>
@@ -55,7 +55,60 @@
 	</div>
 	</nav>
 
+	
+	<!---------espace patient------->
+	
+			<nav id="sidebar" [class.collapsed]="collapsed" class="xoxo" *ngIf="patientLoggedIn | async"   > 
+				
+				<span class="divider"></span>
+				<div class="userArea">
+					
+					<div class="userName">
+						<p>{{nom}} </p>
+					</div>
+			  <div class="ui pointing dropdown accountMenu" suiDropdown autoClose="outsideClick">
+						<div class="text"><i class="fa fa-cogs"></i></div>
+						<div class="menu" suiDropdownMenu>
+							<div class="item"><i class="fa fa-user"></i> Profile</div>
+							<div class="item"><i class="fa fa-sign-out"></i> Sign out</div>
+						</div>
+					</div>
+				</div>
+				<span class="divider"></span>
+				<ul class="navigation">
+					<li>
+						<a  routerLink="messagerie"  routerLinkActive="active" tooltip=""><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d=""  fill-rule="nonzero"/></svg></i><span></span></a>
+					</li> 
+					<li>
+						<a  routerLink="messagerie"  routerLinkActive="active" tooltip=""><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d=""  fill-rule="nonzero"/></svg></i><span></span></a>
+					</li> 
+					<li>
+						<a  routerLink="messagerie"  routerLinkActive="active" tooltip=""><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d=""  fill-rule="nonzero"/></svg></i><span></span></a>
+					</li> 
+					
 
+					<li>
+						<a  routerLink="messagerie"  routerLinkActive="active" tooltip="Dashboard"><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z"  fill-rule="nonzero"/></svg></i><span>Espace Patient/Medecin</span></a>
+					</li>
+			  <li>
+						<a routerLink="rdv"  routerLinkActive="active" ><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z"  fill-rule="nonzero"/></svg></i><span>Espace rendez vous</span></a>
+					</li>
+			  <li>
+						<a routerLink="dossierMedical"  routerLinkActive="active"><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z"  fill-rule="nonzero"/></svg></i><span>Dossier Medical</span></a>
+					</li>
+					
+					<li>
+						<a href="#" (click)="onLogout()" tooltip="APIs"><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z" fill-rule="nonzero"/></svg></i><span>Deconnexion</span></a>
+					</li>
+			  
+			 
+				</ul>
+			<div class="expandBtn">
+				<span id="sidebarCollapse"><i class="fa fa-compress" [class.fa-compress]="!collapsed" [class.fa-expand]="collapsed"
+						(click)="collapsed = !collapsed"></i></span>
+			</div>
+			</nav>
+		
 
 
 	<div id="content">
