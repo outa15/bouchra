@@ -18,7 +18,9 @@ private baseUrl = 'http://localhost:8080/api/v1/consultations';
   }
 
   getConsultationsListById(id_consultation: String): Observable<any>{
-    return this.httpClient.get(`${this.baseUrl}/${id_consultation}`);
+    if(id_consultation !== undefined) {
+      return this.httpClient.get(`${this.baseUrl}/${id_consultation}`);
+    }
   }
 
 
