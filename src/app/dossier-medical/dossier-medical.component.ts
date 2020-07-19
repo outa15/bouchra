@@ -41,12 +41,12 @@ export class DossierMedicalComponent implements OnInit {
           for(let c of this.patient.consultations){
             
             if(c.id === undefined ){
-              this.dossierMedicalService.getConsultationsListById(c).subscribe(data  => {
+              this.dossierMedicalService.getConsultationsListById(c+"").subscribe(data  => {
                 
                 data && consTmp.push(data);
               });
             }
-               c.id && this.dossierMedicalService.getConsultationsListById(c.id).subscribe(data  => {
+               c.id && this.dossierMedicalService.getConsultationsListById(c.id+"").subscribe(data  => {
                  data && consTmp.push(data);
                });
           }

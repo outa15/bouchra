@@ -37,13 +37,13 @@ export class ConsultationsComponent implements OnInit {
        for (let c of this.consultations){
          console.log(c.id)
         if(c.id === undefined ){
-        this.dossierMedicalService.getConsultationsListById(c.id).subscribe(data=>{
+        this.dossierMedicalService.getConsultationsListById(c+"").subscribe(data=>{
           consTmp.push(data)    
         console.log("methode1")   }); 
           
         }
 
-       this.dossierMedicalService.getConsultationsListById(c.id).subscribe(data=>{
+       this.dossierMedicalService.getConsultationsListById(c.id+"").subscribe(data=>{
            consTmp.push(data) 
            console.log("methode2") } ); 
           
@@ -66,7 +66,7 @@ export class ConsultationsComponent implements OnInit {
          for (let c of data){
            
           if(c.id === undefined ){
-            this.dossierMedicalService.getConsultationsListById(c.id).subscribe(data=>{
+            this.dossierMedicalService.getConsultationsListById(c+"").subscribe(data=>{
               if(data.patient.nom=== this.nomPatient){
               consTmpp.push(data)  
             this.DisplayName=true 
@@ -75,7 +75,7 @@ export class ConsultationsComponent implements OnInit {
             
             }
             
-           this.dossierMedicalService.getConsultationsListById(c.id).subscribe(data=>{
+           this.dossierMedicalService.getConsultationsListById(c.id+"").subscribe(data=>{
             if(c.patient.nom=== this.nomPatient){
                consTmpp.push(data)
               this.DisplayName=true }
